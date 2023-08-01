@@ -1,0 +1,107 @@
+body,
+html {
+  margin: 0;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.cards::-webkit-scrollbar {       /* Works on Chrome, Edge, and Safari */
+  height: 5px;               /* width of the entire scrollbar */
+}
+
+::-moz-scrollbar {          /* Works on Firefox */
+  height: 5px; 
+} 
+
+::-ms-scrollbar {           /* Works on Internet Explorer */
+  height: 5px; 
+} 
+
+::-webkit-scrollbar-track {
+  background: #dee4e9;        /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #272727;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+  .grid-card-content {
+    grid-area: body;
+    overflow-y: hidden;
+  }
+
+  .cards {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(1);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .cards.active {
+    background: rgba(255,255,255,0.3);
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
+
+  .card {
+    border-radius: 20px;
+    display: inline-block;
+    background-color: #f9f9f9;
+    min-height: 310px;
+    min-width: 240px;
+    margin: 2em 1em;
+
+    @media screen and (max-width: 425px) {
+      min-height: 200px;
+      min-width: 200px;
+      .add-to-card-button{
+        margin-bottom: 10px;
+      }
+      img{
+        max-width: 200px;
+        max-height: 170px;
+      }
+    }
+  }
+
+  .card img{
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .equipment-name{
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  .equipment-price{
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  .add-to-card-button{
+    border: 1px solid #0081ce;
+    padding: 5px;
+    border-radius: 15px;
+    background: #0081ce;
+    color: #ffffff;
+    width: 170px;
+    padding-bottom: 10px;
+  }
+
+  .infoTitle{
+    font-size: 16pt;
+  }
+  
+  @media screen and (min-width: 1100px) {
+   .cards{
+    overflow: hidden;
+   }
+  }
